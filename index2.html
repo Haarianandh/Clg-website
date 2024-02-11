@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+  <style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+button {
+  background-color:#0c0909;
+  color:rgb(245, 241, 241);
+  cursor: pointer;
+  border-radius:12px;
+  
+}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    img{
+        border-radius: 50%;
+    }
+    header {
+      background-color: #73bef0;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      margin: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .project {
+      margin-bottom: 40px;
+    }
+
+    .project h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      margin-bottom: 0;
+    }
+
+    .filter-btns button {
+      margin-right: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>KGiSL INSTITUTE OF TECHNOLOGY</h1>
+    <h3>Welcome Haaripriya !</h3>
+    <div class="filter-btns">
+      <button onclick="filterProjects('pd')" id="pd">My Profile</button>
+      <button onclick="filterProjects('ad')">Attendance</button>
+      <button onclick="filterProjects('fee')">Fees Details</button>
+    </div>
+  </header>
+  <main>
+    
+    <div class="project" data-category="pd">
+    <form action="edit.html">
+      <button type="submit">Edit</button>
+        <img src="avatar.jpg" alt="avatar1" style="width: 200px;"><hr>
+        <h4>PROFESSIONAL DETAILS</h4><hr>
+        <h4><pre><b>NAME    :Haaripriya A L
+ROLL NO :21IT17
+REG NO  :711721205018
+COURSE  :BTech IT
+YEAR    :II
+</b></pre></h4>
+        <hr>
+        <h4>PERSONAL DETAILS</h4><hr>
+        <b><h4><pre>AGE     :19
+DOB     :15-11-2003
+ADDRESS : 1/11,Railway station road,No.4 Veerapandi,CBE-19 
+PHONE NO: 9876543210
+</pre></b></h4>
+                    <hr>
+        </div>
+
+      </div>
+    <div class="project" data-category="ad">
+        <center><table style="width: 50%">
+            <h3><b>STUDENT ATTENDANCE REPORT</b></h3><br>
+                <tr>
+                  <th>SEMESTER</th>
+                  <th>TOTAL HOURS</th>
+                  <th>TOTAL PRESENT</th>
+                  <th>TOTAL ABSENT</th>
+                  <th>PERCENTAGE-(%)</th>
+                </tr>
+                <tr>
+                  <td>Sem-I</td>
+                  <td>408</td>
+                  <td>270</td>
+                  <td>138</td>
+                  <td>66.18</td>
+                </tr>
+                <tr>
+                  <td>Sem-II</td>
+                  <td>547</td>
+                  <td>453</td>
+                  <td>94</td>
+                  <td>82.82</td>
+                </tr>
+                <tr>
+                  <td>Sem-III</td>
+                  <td>678</td>
+                  <td>545</td>
+                  <td>133</td>
+                  <td>80.38</td>
+                </tr>
+
+        </table></center>
+    </div>
+    
+    
+    <div class="project" data-category="fee">
+      <h2><center>No Dues Found</center></h2>
+      
+    </form></div>
+  </main>
+
+  <script>
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project');
+      
+      projects.forEach(project => {
+        if (project.dataset.category === category) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
